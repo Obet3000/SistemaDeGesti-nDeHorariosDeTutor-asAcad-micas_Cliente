@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/CancelarServicio" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.3.3:8080/CancelarServicio" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CancelarServicio.xsd" MetadataType="Schema" ID="f08eba0d-a288-4572-ae50-229cb21f1e74" SourceId="1" SourceUrl="http://localhost:8080/CancelarServicio?xsd=xsd1" />
-    <MetadataFile FileName="CancelarServicio.disco" MetadataType="Disco" ID="e81a7582-c948-4d9a-a2d1-3edace9ee2d0" SourceId="1" SourceUrl="http://localhost:8080/CancelarServicio?disco" />
-    <MetadataFile FileName="CancelarServicio.wsdl" MetadataType="Wsdl" ID="3fe5001a-9025-4b47-aef8-bda4e0e58892" SourceId="1" SourceUrl="http://localhost:8080/CancelarServicio?wsdl" />
-    <MetadataFile FileName="CancelarServicio1.xsd" MetadataType="Schema" ID="cbe98fc7-8170-4114-bd5d-3dec9ccb0767" SourceId="1" SourceUrl="http://localhost:8080/CancelarServicio?xsd=xsd2" />
-    <MetadataFile FileName="CancelarServicio2.xsd" MetadataType="Schema" ID="1ecceeb4-d0c8-47f2-aef2-ad84e576af8f" SourceId="1" SourceUrl="http://localhost:8080/CancelarServicio?xsd=xsd0" />
+    <MetadataFile FileName="CancelarServicio1.disco" MetadataType="Disco" ID="5d791501-b321-47be-9f4a-8ce7077f4e75" SourceId="1" SourceUrl="http://192.168.3.3:8080/CancelarServicio?disco" />
+    <MetadataFile FileName="CancelarServicio1.wsdl" MetadataType="Wsdl" ID="35975b12-4874-49d0-9333-c52bb7882dac" SourceId="1" SourceUrl="http://192.168.3.3:8080/CancelarServicio?wsdl" />
+    <MetadataFile FileName="CancelarServicio3.xsd" MetadataType="Schema" ID="f7c80f18-5ba9-4669-9eaa-3fcba2f1d6af" SourceId="1" SourceUrl="http://192.168.3.3:8080/CancelarServicio?xsd=xsd2" />
+    <MetadataFile FileName="CancelarServicio31.xsd" MetadataType="Schema" ID="c5497b86-46a8-4335-88f8-80152f8da948" SourceId="1" SourceUrl="http://192.168.3.3:8080/CancelarServicio?xsd=xsd0" />
+    <MetadataFile FileName="CancelarServicio32.xsd" MetadataType="Schema" ID="53f4e00a-aac4-4ea0-9605-cf7e6ad0fc4b" SourceId="1" SourceUrl="http://192.168.3.3:8080/CancelarServicio?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -626,6 +626,9 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioRegistr
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioRegistro.TutoradoDTO TutoradoField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioRegistro.TutoriaAcademicaDTO TutoriaAcademicaField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -736,6 +739,19 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioRegistr
                 if ((object.ReferenceEquals(this.TutoradoField, value) != true)) {
                     this.TutoradoField = value;
                     this.RaisePropertyChanged("Tutorado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioRegistro.TutoriaAcademicaDTO TutoriaAcademica {
+            get {
+                return this.TutoriaAcademicaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TutoriaAcademicaField, value) != true)) {
+                    this.TutoriaAcademicaField = value;
+                    this.RaisePropertyChanged("TutoriaAcademica");
                 }
             }
         }

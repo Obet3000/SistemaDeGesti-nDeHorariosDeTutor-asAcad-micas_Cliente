@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/AutentificacionServicio?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.3.3:8080/AutentificacionServicio?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="AutentificacionServicio1.xsd" MetadataType="Schema" ID="85875336-e85e-4c18-8029-07917ca7a3f2" SourceId="1" SourceUrl="http://localhost:8080/AutentificacionServicio?xsd=xsd0" />
-    <MetadataFile FileName="AutentificacionServicio3.xsd" MetadataType="Schema" ID="d861617f-cf22-4766-a85d-a62a48da58dc" SourceId="1" SourceUrl="http://localhost:8080/AutentificacionServicio?xsd=xsd2" />
-    <MetadataFile FileName="AutentificacionServicio2.xsd" MetadataType="Schema" ID="71f694ad-6b6f-43ed-a403-0702b0c15f84" SourceId="1" SourceUrl="http://localhost:8080/AutentificacionServicio?xsd=xsd1" />
-    <MetadataFile FileName="AutentificacionServicio.wsdl" MetadataType="Wsdl" ID="5684424a-729d-43eb-b9e4-da5ea3d645e2" SourceId="1" SourceUrl="http://localhost:8080/AutentificacionServicio?wsdl" />
+    <MetadataFile FileName="AutentificacionServicio.xsd" MetadataType="Schema" ID="8df3c272-138b-4121-a895-8db8ea086b01" SourceId="1" SourceUrl="http://192.168.3.3:8080/AutentificacionServicio?xsd=xsd0" />
+    <MetadataFile FileName="AutentificacionServicio1.wsdl" MetadataType="Wsdl" ID="8bb9149b-3828-451e-bfff-c7dcf6c2b99c" SourceId="1" SourceUrl="http://192.168.3.3:8080/AutentificacionServicio?wsdl" />
+    <MetadataFile FileName="AutentificacionServicio1.xsd" MetadataType="Schema" ID="681a8c08-1094-4291-b999-f682a4ec4467" SourceId="1" SourceUrl="http://192.168.3.3:8080/AutentificacionServicio?xsd=xsd1" />
+    <MetadataFile FileName="AutentificacionServicio2.xsd" MetadataType="Schema" ID="c96dad65-3037-47d6-8d24-0d7e40d8d232" SourceId="1" SourceUrl="http://192.168.3.3:8080/AutentificacionServicio?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

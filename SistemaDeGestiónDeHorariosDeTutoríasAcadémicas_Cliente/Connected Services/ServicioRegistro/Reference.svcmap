@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/RegistroServicio?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.3.3:8080/RegistroServicio?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServicioRegistro.wsdl" MetadataType="Wsdl" ID="65242339-f301-498f-a881-e78e164da5fe" SourceId="1" SourceUrl="http://localhost:8080/RegistroServicio?wsdl" />
-    <MetadataFile FileName="RegistroServicio3.xsd" MetadataType="Schema" ID="ef34628e-8671-4a77-9e44-94231746c9b1" SourceId="1" SourceUrl="http://localhost:8080/RegistroServicio?xsd=xsd0" />
-    <MetadataFile FileName="RegistroServicio2.xsd" MetadataType="Schema" ID="670a64f0-31bc-4619-9432-7eb1158d9004" SourceId="1" SourceUrl="http://localhost:8080/RegistroServicio?xsd=xsd1" />
-    <MetadataFile FileName="RegistroServicio1.xsd" MetadataType="Schema" ID="59eb834d-c6f9-436b-acc9-fb8e4b7af53c" SourceId="1" SourceUrl="http://localhost:8080/RegistroServicio?xsd=xsd2" />
+    <MetadataFile FileName="ServicioRegistro1.wsdl" MetadataType="Wsdl" ID="e9c13b34-2db4-48eb-9256-ebf8e50be398" SourceId="1" SourceUrl="http://192.168.3.3:8080/RegistroServicio?wsdl" />
+    <MetadataFile FileName="RegistroServicio.xsd" MetadataType="Schema" ID="8cdf533e-d111-4cba-9e4b-7cfab12a8abe" SourceId="1" SourceUrl="http://192.168.3.3:8080/RegistroServicio?xsd=xsd2" />
+    <MetadataFile FileName="RegistroServicio1.xsd" MetadataType="Schema" ID="f49cf86f-f1ed-40d4-8649-847cd59ad9ad" SourceId="1" SourceUrl="http://192.168.3.3:8080/RegistroServicio?xsd=xsd1" />
+    <MetadataFile FileName="RegistroServicio2.xsd" MetadataType="Schema" ID="73d1e86b-34ff-4ce0-9ee6-7e6c4af2af61" SourceId="1" SourceUrl="http://192.168.3.3:8080/RegistroServicio?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

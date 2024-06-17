@@ -10,16 +10,13 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://localhost:8080/SesionTutoriaServicio?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:8080/SesionTutoriaServicio?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8080/SesionTutoriaServicio?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Dominio" />
+      <xsd:import schemaLocation="http://192.168.3.3:8080/SesionTutoriaServicio?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.3.3:8080/SesionTutoriaServicio?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.3.3:8080/SesionTutoriaServicio?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Dominio" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ISesionTutoriaServicio_RegistrarSesionDeTutoria_InputMessage">
     <wsdl:part name="parameters" element="tns:RegistrarSesionDeTutoria" />
-  </wsdl:message>
-  <wsdl:message name="ISesionTutoriaServicio_RegistrarSesionDeTutoria_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RegistrarSesionDeTutoriaResponse" />
   </wsdl:message>
   <wsdl:message name="ISesionTutoriaServicio_ObtenerSesionesPorPeriodo_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerSesionesPorPeriodo" />
@@ -33,9 +30,6 @@
   <wsdl:message name="ISesionTutoriaServicio_NotificarError_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarError" />
   </wsdl:message>
-  <wsdl:message name="ISesionTutoriaServicio_NotificarError_InputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:NotificarErrorResponse" />
-  </wsdl:message>
   <wsdl:message name="ISesionTutoriaServicio_NotificarSesionesPorPeriodo_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:NotificarSesionesPorPeriodo" />
   </wsdl:message>
@@ -45,7 +39,6 @@
   <wsdl:portType name="ISesionTutoriaServicio">
     <wsdl:operation name="RegistrarSesionDeTutoria">
       <wsdl:input wsaw:Action="http://tempuri.org/ISesionTutoriaServicio/RegistrarSesionDeTutoria" message="tns:ISesionTutoriaServicio_RegistrarSesionDeTutoria_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISesionTutoriaServicio/RegistrarSesionDeTutoriaResponse" message="tns:ISesionTutoriaServicio_RegistrarSesionDeTutoria_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerSesionesPorPeriodo">
       <wsdl:input wsaw:Action="http://tempuri.org/ISesionTutoriaServicio/ObtenerSesionesPorPeriodo" message="tns:ISesionTutoriaServicio_ObtenerSesionesPorPeriodo_InputMessage" />
@@ -56,7 +49,6 @@
     </wsdl:operation>
     <wsdl:operation name="NotificarError">
       <wsdl:output wsaw:Action="http://tempuri.org/ISesionTutoriaServicio/NotificarError" message="tns:ISesionTutoriaServicio_NotificarError_OutputCallbackMessage" />
-      <wsdl:input wsaw:Action="http://tempuri.org/ISesionTutoriaServicio/NotificarErrorResponse" message="tns:ISesionTutoriaServicio_NotificarError_InputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="NotificarSesionesPorPeriodo">
       <wsdl:output wsaw:Action="http://tempuri.org/ISesionTutoriaServicio/NotificarSesionesPorPeriodo" message="tns:ISesionTutoriaServicio_NotificarSesionesPorPeriodo_OutputCallbackMessage" />
@@ -71,9 +63,6 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ObtenerSesionesPorPeriodo">
       <soap12:operation soapAction="http://tempuri.org/ISesionTutoriaServicio/ObtenerSesionesPorPeriodo" style="document" />
@@ -92,9 +81,6 @@
     </wsdl:operation>
     <wsdl:operation name="NotificarError">
       <soap12:operation soapAction="http://tempuri.org/ISesionTutoriaServicio/NotificarError" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
@@ -111,9 +97,9 @@
   </wsdl:binding>
   <wsdl:service name="SesionTutoriaServicio">
     <wsdl:port name="NetTcpBinding_ISesionTutoriaServicio" binding="tns:NetTcpBinding_ISesionTutoriaServicio">
-      <soap12:address location="net.tcp://localhost:8094/SesionTutoriaServicio" />
+      <soap12:address location="net.tcp://192.168.3.3:8094/SesionTutoriaServicio" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://localhost:8094/SesionTutoriaServicio</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.3.3:8094/SesionTutoriaServicio</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>
