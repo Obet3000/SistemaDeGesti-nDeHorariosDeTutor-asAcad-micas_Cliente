@@ -46,6 +46,9 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReserva
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReservacion.TutoradoDTO TutoradoField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReservacion.TutoriaAcademicaDTO TutoriaAcademicaField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -160,6 +163,19 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReserva
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReservacion.TutoriaAcademicaDTO TutoriaAcademica {
+            get {
+                return this.TutoriaAcademicaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TutoriaAcademicaField, value) != true)) {
+                    this.TutoriaAcademicaField = value;
+                    this.RaisePropertyChanged("TutoriaAcademica");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -249,6 +265,195 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReserva
                 if ((object.ReferenceEquals(this.UsuarioTutoradoField, value) != true)) {
                     this.UsuarioTutoradoField = value;
                     this.RaisePropertyChanged("UsuarioTutorado");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TutoriaAcademicaDTO", Namespace="http://schemas.datacontract.org/2004/07/Dominio")]
+    [System.SerializableAttribute()]
+    public partial class TutoriaAcademicaDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CalificacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ComentarioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.TimeSpan> DuracionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> IdSesionTutoriaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdTutoriaAcademicaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> IdUsuarioTutoradoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReservacion.ReservacionDTO[] ReservacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReservacion.SesionDeTutoriaDTO SesionDeTutoriaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UbicacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReservacion.UsuarioDTO UsuarioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Calificacion {
+            get {
+                return this.CalificacionField;
+            }
+            set {
+                if ((this.CalificacionField.Equals(value) != true)) {
+                    this.CalificacionField = value;
+                    this.RaisePropertyChanged("Calificacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Comentario {
+            get {
+                return this.ComentarioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ComentarioField, value) != true)) {
+                    this.ComentarioField = value;
+                    this.RaisePropertyChanged("Comentario");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.TimeSpan> Duracion {
+            get {
+                return this.DuracionField;
+            }
+            set {
+                if ((this.DuracionField.Equals(value) != true)) {
+                    this.DuracionField = value;
+                    this.RaisePropertyChanged("Duracion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> IdSesionTutoria {
+            get {
+                return this.IdSesionTutoriaField;
+            }
+            set {
+                if ((this.IdSesionTutoriaField.Equals(value) != true)) {
+                    this.IdSesionTutoriaField = value;
+                    this.RaisePropertyChanged("IdSesionTutoria");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdTutoriaAcademica {
+            get {
+                return this.IdTutoriaAcademicaField;
+            }
+            set {
+                if ((this.IdTutoriaAcademicaField.Equals(value) != true)) {
+                    this.IdTutoriaAcademicaField = value;
+                    this.RaisePropertyChanged("IdTutoriaAcademica");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> IdUsuarioTutorado {
+            get {
+                return this.IdUsuarioTutoradoField;
+            }
+            set {
+                if ((this.IdUsuarioTutoradoField.Equals(value) != true)) {
+                    this.IdUsuarioTutoradoField = value;
+                    this.RaisePropertyChanged("IdUsuarioTutorado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReservacion.ReservacionDTO[] Reservacion {
+            get {
+                return this.ReservacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReservacionField, value) != true)) {
+                    this.ReservacionField = value;
+                    this.RaisePropertyChanged("Reservacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReservacion.SesionDeTutoriaDTO SesionDeTutoria {
+            get {
+                return this.SesionDeTutoriaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SesionDeTutoriaField, value) != true)) {
+                    this.SesionDeTutoriaField = value;
+                    this.RaisePropertyChanged("SesionDeTutoria");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Ubicacion {
+            get {
+                return this.UbicacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UbicacionField, value) != true)) {
+                    this.UbicacionField = value;
+                    this.RaisePropertyChanged("Ubicacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReservacion.UsuarioDTO Usuario {
+            get {
+                return this.UsuarioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioField, value) != true)) {
+                    this.UsuarioField = value;
+                    this.RaisePropertyChanged("Usuario");
                 }
             }
         }
@@ -454,195 +659,6 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReserva
                 if ((object.ReferenceEquals(this.TutoriaAcademicaField, value) != true)) {
                     this.TutoriaAcademicaField = value;
                     this.RaisePropertyChanged("TutoriaAcademica");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TutoriaAcademicaDTO", Namespace="http://schemas.datacontract.org/2004/07/Dominio")]
-    [System.SerializableAttribute()]
-    public partial class TutoriaAcademicaDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> CalificacionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ComentarioField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.TimeSpan> DuracionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> IdSesionTutoriaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdTutoriaAcademicaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> IdUsuarioTutoradoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReservacion.ReservacionDTO[] ReservacionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReservacion.SesionDeTutoriaDTO SesionDeTutoriaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UbicacionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReservacion.UsuarioDTO UsuarioField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Calificacion {
-            get {
-                return this.CalificacionField;
-            }
-            set {
-                if ((this.CalificacionField.Equals(value) != true)) {
-                    this.CalificacionField = value;
-                    this.RaisePropertyChanged("Calificacion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Comentario {
-            get {
-                return this.ComentarioField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ComentarioField, value) != true)) {
-                    this.ComentarioField = value;
-                    this.RaisePropertyChanged("Comentario");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.TimeSpan> Duracion {
-            get {
-                return this.DuracionField;
-            }
-            set {
-                if ((this.DuracionField.Equals(value) != true)) {
-                    this.DuracionField = value;
-                    this.RaisePropertyChanged("Duracion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> IdSesionTutoria {
-            get {
-                return this.IdSesionTutoriaField;
-            }
-            set {
-                if ((this.IdSesionTutoriaField.Equals(value) != true)) {
-                    this.IdSesionTutoriaField = value;
-                    this.RaisePropertyChanged("IdSesionTutoria");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdTutoriaAcademica {
-            get {
-                return this.IdTutoriaAcademicaField;
-            }
-            set {
-                if ((this.IdTutoriaAcademicaField.Equals(value) != true)) {
-                    this.IdTutoriaAcademicaField = value;
-                    this.RaisePropertyChanged("IdTutoriaAcademica");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> IdUsuarioTutorado {
-            get {
-                return this.IdUsuarioTutoradoField;
-            }
-            set {
-                if ((this.IdUsuarioTutoradoField.Equals(value) != true)) {
-                    this.IdUsuarioTutoradoField = value;
-                    this.RaisePropertyChanged("IdUsuarioTutorado");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReservacion.ReservacionDTO[] Reservacion {
-            get {
-                return this.ReservacionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReservacionField, value) != true)) {
-                    this.ReservacionField = value;
-                    this.RaisePropertyChanged("Reservacion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReservacion.SesionDeTutoriaDTO SesionDeTutoria {
-            get {
-                return this.SesionDeTutoriaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SesionDeTutoriaField, value) != true)) {
-                    this.SesionDeTutoriaField = value;
-                    this.RaisePropertyChanged("SesionDeTutoria");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Ubicacion {
-            get {
-                return this.UbicacionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UbicacionField, value) != true)) {
-                    this.UbicacionField = value;
-                    this.RaisePropertyChanged("Ubicacion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReservacion.UsuarioDTO Usuario {
-            get {
-                return this.UsuarioField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UsuarioField, value) != true)) {
-                    this.UsuarioField = value;
-                    this.RaisePropertyChanged("Usuario");
                 }
             }
         }

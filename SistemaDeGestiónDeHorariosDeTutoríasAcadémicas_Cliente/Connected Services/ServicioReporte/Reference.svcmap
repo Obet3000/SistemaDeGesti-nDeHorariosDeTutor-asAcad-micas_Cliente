@@ -19,15 +19,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/ReporteServicio" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.3.3:8080/ReporteServicio" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ReporteServicio.xsd" MetadataType="Schema" ID="52a727ce-fba3-4789-af80-9ce4a758b449" SourceId="1" SourceUrl="http://localhost:8080/ReporteServicio?xsd=xsd2" />
-    <MetadataFile FileName="ReporteServicio.disco" MetadataType="Disco" ID="1e920cf9-19a6-485e-afd8-0a6fadddd8d9" SourceId="1" SourceUrl="http://localhost:8080/ReporteServicio?disco" />
-    <MetadataFile FileName="ReporteServicio1.xsd" MetadataType="Schema" ID="ffdde82f-83cf-478a-932e-6ec858a4a98a" SourceId="1" SourceUrl="http://localhost:8080/ReporteServicio?xsd=xsd3" />
-    <MetadataFile FileName="ReporteServicio2.xsd" MetadataType="Schema" ID="8bde4a48-b55e-401e-b0b9-194dba75d08b" SourceId="1" SourceUrl="http://localhost:8080/ReporteServicio?xsd=xsd0" />
-    <MetadataFile FileName="ReporteServicio3.xsd" MetadataType="Schema" ID="86b27b58-dc17-4f4f-b149-2bd062ef05f1" SourceId="1" SourceUrl="http://localhost:8080/ReporteServicio?xsd=xsd1" />
-    <MetadataFile FileName="ReporteServicio.wsdl" MetadataType="Wsdl" ID="33ec46cb-d382-442b-bc75-e8fdd662d20a" SourceId="1" SourceUrl="http://localhost:8080/ReporteServicio?wsdl" />
+    <MetadataFile FileName="ReporteServicio1.disco" MetadataType="Disco" ID="2d5ca7b1-d626-4c5f-af39-dcc0b03c82f6" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReporteServicio?disco" />
+    <MetadataFile FileName="ReporteServicio4.xsd" MetadataType="Schema" ID="6edd15ab-3888-4e73-a1ff-640ccdf1651c" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReporteServicio?xsd=xsd0" />
+    <MetadataFile FileName="ReporteServicio41.xsd" MetadataType="Schema" ID="042216d2-2b48-498a-9688-886db707f129" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReporteServicio?xsd=xsd1" />
+    <MetadataFile FileName="ReporteServicio1.wsdl" MetadataType="Wsdl" ID="ed395ccd-d0c9-425f-9c85-03da3eebf4ef" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReporteServicio?wsdl" />
+    <MetadataFile FileName="ReporteServicio42.xsd" MetadataType="Schema" ID="f0c5784d-a290-4f6a-a2c4-347b0e5577f8" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReporteServicio?xsd=xsd3" />
+    <MetadataFile FileName="ReporteServicio43.xsd" MetadataType="Schema" ID="fc485534-af40-4428-8db9-18d453ec6f0f" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReporteServicio?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

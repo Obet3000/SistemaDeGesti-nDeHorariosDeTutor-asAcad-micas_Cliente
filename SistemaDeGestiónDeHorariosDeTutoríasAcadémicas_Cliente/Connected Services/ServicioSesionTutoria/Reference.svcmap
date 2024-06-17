@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/SesionTutoriaServicio?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.3.3:8080/SesionTutoriaServicio?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SesionTutoriaServicio.wsdl" MetadataType="Wsdl" ID="067188da-f9b9-44ba-b105-b8edc29071af" SourceId="1" SourceUrl="http://localhost:8080/SesionTutoriaServicio?wsdl" />
-    <MetadataFile FileName="SesionTutoriaServicio.xsd" MetadataType="Schema" ID="5494192a-bcb8-4925-8286-f4b95fa685d6" SourceId="1" SourceUrl="http://localhost:8080/SesionTutoriaServicio?xsd=xsd0" />
-    <MetadataFile FileName="SesionTutoriaServicio1.xsd" MetadataType="Schema" ID="a71dee13-ba34-45cb-bf37-8fcf976f0b05" SourceId="1" SourceUrl="http://localhost:8080/SesionTutoriaServicio?xsd=xsd1" />
-    <MetadataFile FileName="SesionTutoriaServicio2.xsd" MetadataType="Schema" ID="552de285-bf2c-47fc-a800-d2b8fa4dd8f6" SourceId="1" SourceUrl="http://localhost:8080/SesionTutoriaServicio?xsd=xsd2" />
+    <MetadataFile FileName="SesionTutoriaServicio3.xsd" MetadataType="Schema" ID="fbfec273-a23f-4b35-86d6-3fdcfab95cb8" SourceId="1" SourceUrl="http://192.168.3.3:8080/SesionTutoriaServicio?xsd=xsd1" />
+    <MetadataFile FileName="SesionTutoriaServicio31.xsd" MetadataType="Schema" ID="21c26eb4-1e95-4b45-ae76-c01b545f40d6" SourceId="1" SourceUrl="http://192.168.3.3:8080/SesionTutoriaServicio?xsd=xsd0" />
+    <MetadataFile FileName="SesionTutoriaServicio1.wsdl" MetadataType="Wsdl" ID="927ef710-f143-4a24-8171-a43530624380" SourceId="1" SourceUrl="http://192.168.3.3:8080/SesionTutoriaServicio?wsdl" />
+    <MetadataFile FileName="SesionTutoriaServicio32.xsd" MetadataType="Schema" ID="a2218c52-cf8f-41c0-9ef5-5c9bcbdf5161" SourceId="1" SourceUrl="http://192.168.3.3:8080/SesionTutoriaServicio?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

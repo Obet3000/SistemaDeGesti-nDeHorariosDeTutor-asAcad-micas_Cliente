@@ -110,10 +110,10 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioSesionT
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioSesionTutoria.ISesionTutoriaServicio", CallbackContract=typeof(SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioSesionTutoria.ISesionTutoriaServicioCallback))]
     public interface ISesionTutoriaServicio {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISesionTutoriaServicio/RegistrarSesionDeTutoria", ReplyAction="http://tempuri.org/ISesionTutoriaServicio/RegistrarSesionDeTutoriaResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISesionTutoriaServicio/RegistrarSesionDeTutoria")]
         void RegistrarSesionDeTutoria(SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioSesionTutoria.SesionDeTutoriaDTO sesion);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISesionTutoriaServicio/RegistrarSesionDeTutoria", ReplyAction="http://tempuri.org/ISesionTutoriaServicio/RegistrarSesionDeTutoriaResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISesionTutoriaServicio/RegistrarSesionDeTutoria")]
         System.Threading.Tasks.Task RegistrarSesionDeTutoriaAsync(SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioSesionTutoria.SesionDeTutoriaDTO sesion);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISesionTutoriaServicio/ObtenerSesionesPorPeriodo")]
@@ -129,7 +129,7 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioSesionT
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISesionTutoriaServicio/NotificarSesionRegistrada", ReplyAction="http://tempuri.org/ISesionTutoriaServicio/NotificarSesionRegistradaResponse")]
         void NotificarSesionRegistrada(SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioSesionTutoria.SesionDeTutoriaDTO sesion);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISesionTutoriaServicio/NotificarError", ReplyAction="http://tempuri.org/ISesionTutoriaServicio/NotificarErrorResponse")]
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ISesionTutoriaServicio/NotificarError")]
         void NotificarError(string mensaje);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISesionTutoriaServicio/NotificarSesionesPorPeriodo", ReplyAction="http://tempuri.org/ISesionTutoriaServicio/NotificarSesionesPorPeriodoResponse")]
