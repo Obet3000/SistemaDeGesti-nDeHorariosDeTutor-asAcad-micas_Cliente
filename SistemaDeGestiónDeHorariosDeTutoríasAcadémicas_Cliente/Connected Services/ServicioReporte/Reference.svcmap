@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="cdaed12e-8ff4-4565-88a2-a25c8a5469b5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/ReporteServicio" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ReporteServicio.xsd" MetadataType="Schema" ID="52a727ce-fba3-4789-af80-9ce4a758b449" SourceId="1" SourceUrl="http://localhost:8080/ReporteServicio?xsd=xsd2" />
+    <MetadataFile FileName="ReporteServicio.disco" MetadataType="Disco" ID="1e920cf9-19a6-485e-afd8-0a6fadddd8d9" SourceId="1" SourceUrl="http://localhost:8080/ReporteServicio?disco" />
+    <MetadataFile FileName="ReporteServicio1.xsd" MetadataType="Schema" ID="ffdde82f-83cf-478a-932e-6ec858a4a98a" SourceId="1" SourceUrl="http://localhost:8080/ReporteServicio?xsd=xsd3" />
+    <MetadataFile FileName="ReporteServicio2.xsd" MetadataType="Schema" ID="8bde4a48-b55e-401e-b0b9-194dba75d08b" SourceId="1" SourceUrl="http://localhost:8080/ReporteServicio?xsd=xsd0" />
+    <MetadataFile FileName="ReporteServicio3.xsd" MetadataType="Schema" ID="86b27b58-dc17-4f4f-b149-2bd062ef05f1" SourceId="1" SourceUrl="http://localhost:8080/ReporteServicio?xsd=xsd1" />
+    <MetadataFile FileName="ReporteServicio.wsdl" MetadataType="Wsdl" ID="33ec46cb-d382-442b-bc75-e8fdd662d20a" SourceId="1" SourceUrl="http://localhost:8080/ReporteServicio?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

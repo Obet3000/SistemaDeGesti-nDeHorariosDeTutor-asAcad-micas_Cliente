@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="019012ae-7b03-48bf-bfc3-fef23a6715b7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/CancelarServicio" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CancelarServicio.xsd" MetadataType="Schema" ID="f08eba0d-a288-4572-ae50-229cb21f1e74" SourceId="1" SourceUrl="http://localhost:8080/CancelarServicio?xsd=xsd1" />
+    <MetadataFile FileName="CancelarServicio.disco" MetadataType="Disco" ID="e81a7582-c948-4d9a-a2d1-3edace9ee2d0" SourceId="1" SourceUrl="http://localhost:8080/CancelarServicio?disco" />
+    <MetadataFile FileName="CancelarServicio.wsdl" MetadataType="Wsdl" ID="3fe5001a-9025-4b47-aef8-bda4e0e58892" SourceId="1" SourceUrl="http://localhost:8080/CancelarServicio?wsdl" />
+    <MetadataFile FileName="CancelarServicio1.xsd" MetadataType="Schema" ID="cbe98fc7-8170-4114-bd5d-3dec9ccb0767" SourceId="1" SourceUrl="http://localhost:8080/CancelarServicio?xsd=xsd2" />
+    <MetadataFile FileName="CancelarServicio2.xsd" MetadataType="Schema" ID="1ecceeb4-d0c8-47f2-aef2-ad84e576af8f" SourceId="1" SourceUrl="http://localhost:8080/CancelarServicio?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

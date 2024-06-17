@@ -1,0 +1,28 @@
+﻿<Page x:Class="SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.RegistrarSesionTutoria"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Registrar Sesión de Tutorías">
+
+    <Grid>
+        <!-- Banner -->
+        <Border Background="Green" Height="50" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <TextBlock Text="Registrar fecha de sesión de tutorías" FontSize="24" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0"/>
+        </Border>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Calendar Name="CalendarControl" SelectedDatesChanged="CalendarControl_SelectedDatesChanged" />
+            <TextBlock Name="FechaSeleccionadaTextBlock" FontSize="16" Foreground="Black" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+        </StackPanel>
+
+        <!-- Botones -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,20,0,20">
+            <Button Content="Regresar" Background="Red" Foreground="White" Width="120" Height="40" Margin="10" Click="Regresar_Click"/>
+            <Button Content="Guardar" Background="Green" Foreground="White" Width="120" Height="40" Margin="10" Click="Guardar_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

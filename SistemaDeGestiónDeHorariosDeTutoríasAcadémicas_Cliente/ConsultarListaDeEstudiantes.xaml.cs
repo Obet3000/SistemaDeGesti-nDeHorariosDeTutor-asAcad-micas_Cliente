@@ -1,0 +1,170 @@
+﻿using SistemaDeGestiónDeHorariosDeTutoríasAcadémicas_Cliente;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.ServiceModel;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Threading;
+using SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioConsulta;
+
+namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
+{
+    public partial class ConsultarListaDeEstudiantes : Page, IConsultaServicioCallback
+    {
+        private ConsultaServicioClient _servicio;
+        private DispatcherTimer timer;
+        private TimeSpan tiempoTranscurrido;
+        private List<ReservacionDTO> estudiantes;
+        private ReservacionDTO estudianteActual;
+
+        public ConsultarListaDeEstudiantes()
+        {
+            InitializeComponent();
+            var context = new InstanceContext(this);
+            _servicio = new ConsultaServicioClient(context);
+            InicializarTemporizador();
+            CargarDatos();
+            ConfigurarBotones();
+        }
+
+        private void ConfigurarBotones()
+        {
+            var usuario = UsuarioSingleton.ObtenerInstancia();
+
+            switch (usuario.Rol)
+            {
+                case "Tutor":
+                    IniciarContadorButton.Visibility = Visibility.Visible;
+                    DetenerContadorButton.Visibility = Visibility.Visible;
+                    break;
+                default:
+                    IniciarContadorButton.Visibility = Visibility.Collapsed;
+                    DetenerContadorButton.Visibility = Visibility.Collapsed;
+                    break;
+            }
+
+            RegresarButton.Visibility = Visibility.Visible;
+        }
+
+        private void CargarDatos()
+        {
+            try
+            {
+                int tutorId = UsuarioSingleton.ObtenerInstancia().IdUsuario;
+                _servicio.ObtenerReservacionesEnColaAsync(tutorId);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No hay conexión. Inténtelo más tarde.");
+                NavigationService.GoBack();
+            }
+        }
+
+        public void NotificarReservacionesEnCola(ReservacionDTO[] reservaciones)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                estudiantes = reservaciones.ToList();
+
+                if (estudiantes != null && estudiantes.Any())
+                {
+                    EstudiantesDataGrid.ItemsSource = estudiantes;
+                    EstudiantesDataGrid.SelectedItem = estudiantes.FirstOrDefault();
+                    ActualizarTutoradoAtendido();
+                }
+                else
+                {
+                    MessageBox.Show("No hay reservaciones disponibles.");
+                    NavigationService.GoBack();
+                }
+            });
+        }
+
+        private void InicializarTemporizador()
+        {
+            tiempoTranscurrido = TimeSpan.Zero;
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            tiempoTranscurrido = tiempoTranscurrido.Add(TimeSpan.FromSeconds(1));
+            ActualizarTiempoTranscurrido();
+        }
+
+        private void ActualizarTiempoTranscurrido()
+        {
+            TiempoTranscurridoTextBlock.Text = "Tiempo transcurrido: " + tiempoTranscurrido.ToString(@"mm\:ss");
+        }
+
+        private void Regresar_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void DetenerContador_Click(object sender, RoutedEventArgs e)
+        {
+            timer.Stop();
+            if (estudianteActual != null)
+            {
+                estudianteActual.TutoriaAcademica.Duracion = tiempoTranscurrido;
+
+                TutoriaAcademicaDTO tutoria = new TutoriaAcademicaDTO
+                {
+                    IdTutoriaAcademica = estudianteActual.TutoriaAcademica.IdTutoriaAcademica,
+                    Duracion = estudianteActual.TutoriaAcademica.Duracion,
+                    Usuario = new UsuarioDTO {Correo = estudianteActual.Tutorado.UsuarioTutorado.Correo }
+                };
+                _servicio.ActualizarTutoriaAcademica(tutoria);
+            }
+        }
+
+        private void IniciarContador_Click(object sender, RoutedEventArgs e)
+        {
+            if (EstudiantesDataGrid.SelectedItem != null)
+            {
+                estudianteActual = (ReservacionDTO)EstudiantesDataGrid.SelectedItem;
+                tiempoTranscurrido = TimeSpan.Zero;
+                timer.Start();
+                MessageBox.Show($"Iniciando contador para {estudianteActual.Tutorado.UsuarioTutorado.Nombre}");
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un tutorado de la lista.");
+            }
+        }
+
+        private void ActualizarTutoradoAtendido()
+        {
+            if (EstudiantesDataGrid.SelectedItem != null)
+            {
+                estudianteActual = (ReservacionDTO)EstudiantesDataGrid.SelectedItem;
+                TutoradoAtendidoTextBlock.Text = "Tutorado atendido: " + estudianteActual.Tutorado.UsuarioTutorado.Nombre;
+            }
+        }
+
+        public void NotificarTutoriaAcademicaActualizada(TutoriaAcademicaDTO tutoria)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                MessageBox.Show($"Tutoria académica actualizada: {tutoria.Duracion}");
+            });
+        }
+
+        public void NotificarError(string mensaje)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                MessageBox.Show($"Error: {mensaje}");
+            });
+        }
+
+        private void EstudiantesDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ActualizarTutoradoAtendido();
+        }
+    }
+}

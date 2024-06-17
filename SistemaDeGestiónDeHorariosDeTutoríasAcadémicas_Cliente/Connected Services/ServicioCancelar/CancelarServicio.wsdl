@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="CancelarServicio" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_ICancelarServicio_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/CancelarServicio?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/CancelarServicio?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/CancelarServicio?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Dominio" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICancelarServicio_CancelarReservacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarReservacion" />
+  </wsdl:message>
+  <wsdl:message name="ICancelarServicio_CancelarTodasReservaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelarTodasReservaciones" />
+  </wsdl:message>
+  <wsdl:message name="ICancelarServicio_ObtenerReservaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerReservaciones" />
+  </wsdl:message>
+  <wsdl:message name="ICancelarServicio_NotificarReservacionCancelada_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarReservacionCancelada" />
+  </wsdl:message>
+  <wsdl:message name="ICancelarServicio_NotificarTodasReservacionesCanceladas_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarTodasReservacionesCanceladas" />
+  </wsdl:message>
+  <wsdl:message name="ICancelarServicio_NotificarReservaciones_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarReservaciones" />
+  </wsdl:message>
+  <wsdl:message name="ICancelarServicio_NotificarError_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarError" />
+  </wsdl:message>
+  <wsdl:portType name="ICancelarServicio">
+    <wsdl:operation name="CancelarReservacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICancelarServicio/CancelarReservacion" message="tns:ICancelarServicio_CancelarReservacion_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelarTodasReservaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICancelarServicio/CancelarTodasReservaciones" message="tns:ICancelarServicio_CancelarTodasReservaciones_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerReservaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICancelarServicio/ObtenerReservaciones" message="tns:ICancelarServicio_ObtenerReservaciones_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarReservacionCancelada">
+      <wsdl:output wsaw:Action="http://tempuri.org/ICancelarServicio/NotificarReservacionCancelada" message="tns:ICancelarServicio_NotificarReservacionCancelada_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarTodasReservacionesCanceladas">
+      <wsdl:output wsaw:Action="http://tempuri.org/ICancelarServicio/NotificarTodasReservacionesCanceladas" message="tns:ICancelarServicio_NotificarTodasReservacionesCanceladas_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarReservaciones">
+      <wsdl:output wsaw:Action="http://tempuri.org/ICancelarServicio/NotificarReservaciones" message="tns:ICancelarServicio_NotificarReservaciones_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarError">
+      <wsdl:output wsaw:Action="http://tempuri.org/ICancelarServicio/NotificarError" message="tns:ICancelarServicio_NotificarError_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_ICancelarServicio" type="tns:ICancelarServicio">
+    <wsp:PolicyReference URI="#NetTcpBinding_ICancelarServicio_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="CancelarReservacion">
+      <soap12:operation soapAction="http://tempuri.org/ICancelarServicio/CancelarReservacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarTodasReservaciones">
+      <soap12:operation soapAction="http://tempuri.org/ICancelarServicio/CancelarTodasReservaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerReservaciones">
+      <soap12:operation soapAction="http://tempuri.org/ICancelarServicio/ObtenerReservaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarReservacionCancelada">
+      <soap12:operation soapAction="http://tempuri.org/ICancelarServicio/NotificarReservacionCancelada" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarTodasReservacionesCanceladas">
+      <soap12:operation soapAction="http://tempuri.org/ICancelarServicio/NotificarTodasReservacionesCanceladas" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarReservaciones">
+      <soap12:operation soapAction="http://tempuri.org/ICancelarServicio/NotificarReservaciones" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarError">
+      <soap12:operation soapAction="http://tempuri.org/ICancelarServicio/NotificarError" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CancelarServicio">
+    <wsdl:port name="NetTcpBinding_ICancelarServicio" binding="tns:NetTcpBinding_ICancelarServicio">
+      <soap12:address location="net.tcp://localhost:8098/CancelarServicio" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8098/CancelarServicio</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

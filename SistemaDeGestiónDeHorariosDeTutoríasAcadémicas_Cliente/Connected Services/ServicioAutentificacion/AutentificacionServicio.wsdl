@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="AutentificacionServicio" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IAutentificacionServicio_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/AutentificacionServicio?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/AutentificacionServicio?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/AutentificacionServicio?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Dominio" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAutentificacionServicio_AutentificacionUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutentificacionUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IAutentificacionServicio_DefinirTutor_InputMessage">
+    <wsdl:part name="parameters" element="tns:DefinirTutor" />
+  </wsdl:message>
+  <wsdl:message name="IAutentificacionServicio_ObtenerTutores_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTutores" />
+  </wsdl:message>
+  <wsdl:message name="IAutentificacionServicio_RespuestaAutentificacion_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RespuestaAutentificacion" />
+  </wsdl:message>
+  <wsdl:message name="IAutentificacionServicio_RespuestaAutentificacion_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RespuestaAutentificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAutentificacionServicio_NotificarActualizacionUsuario_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotificarActualizacionUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IAutentificacionServicio_RecibirTutores_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RecibirTutores" />
+  </wsdl:message>
+  <wsdl:portType name="IAutentificacionServicio">
+    <wsdl:operation name="AutentificacionUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAutentificacionServicio/AutentificacionUsuario" message="tns:IAutentificacionServicio_AutentificacionUsuario_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DefinirTutor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAutentificacionServicio/DefinirTutor" message="tns:IAutentificacionServicio_DefinirTutor_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTutores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAutentificacionServicio/ObtenerTutores" message="tns:IAutentificacionServicio_ObtenerTutores_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RespuestaAutentificacion">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAutentificacionServicio/RespuestaAutentificacion" message="tns:IAutentificacionServicio_RespuestaAutentificacion_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IAutentificacionServicio/RespuestaAutentificacionResponse" message="tns:IAutentificacionServicio_RespuestaAutentificacion_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotificarActualizacionUsuario">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAutentificacionServicio/NotificarActualizacionUsuario" message="tns:IAutentificacionServicio_NotificarActualizacionUsuario_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecibirTutores">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAutentificacionServicio/RecibirTutores" message="tns:IAutentificacionServicio_RecibirTutores_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IAutentificacionServicio" type="tns:IAutentificacionServicio">
+    <wsp:PolicyReference URI="#NetTcpBinding_IAutentificacionServicio_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="AutentificacionUsuario">
+      <soap12:operation soapAction="http://tempuri.org/IAutentificacionServicio/AutentificacionUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="DefinirTutor">
+      <soap12:operation soapAction="http://tempuri.org/IAutentificacionServicio/DefinirTutor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTutores">
+      <soap12:operation soapAction="http://tempuri.org/IAutentificacionServicio/ObtenerTutores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RespuestaAutentificacion">
+      <soap12:operation soapAction="http://tempuri.org/IAutentificacionServicio/RespuestaAutentificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotificarActualizacionUsuario">
+      <soap12:operation soapAction="http://tempuri.org/IAutentificacionServicio/NotificarActualizacionUsuario" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecibirTutores">
+      <soap12:operation soapAction="http://tempuri.org/IAutentificacionServicio/RecibirTutores" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AutentificacionServicio">
+    <wsdl:port name="NetTcpBinding_IAutentificacionServicio" binding="tns:NetTcpBinding_IAutentificacionServicio">
+      <soap12:address location="net.tcp://localhost:8091/AutentificacionServicio" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8091/AutentificacionServicio</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

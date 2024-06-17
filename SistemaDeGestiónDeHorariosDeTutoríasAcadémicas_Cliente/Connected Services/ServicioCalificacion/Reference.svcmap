@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="cf6dd72e-0698-435b-b0bb-cb67884203ca" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/CalificacionServicio" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CalificacionServicio.xsd" MetadataType="Schema" ID="80b697a8-b526-405c-a58d-ede9172648f4" SourceId="1" SourceUrl="http://localhost:8080/CalificacionServicio?xsd=xsd1" />
+    <MetadataFile FileName="CalificacionServicio1.xsd" MetadataType="Schema" ID="3bc2c792-9857-469c-908f-cb554a9cfa31" SourceId="1" SourceUrl="http://localhost:8080/CalificacionServicio?xsd=xsd2" />
+    <MetadataFile FileName="CalificacionServicio.wsdl" MetadataType="Wsdl" ID="23ea03f2-3ab8-4cf2-ada3-10788a17717b" SourceId="1" SourceUrl="http://localhost:8080/CalificacionServicio?wsdl" />
+    <MetadataFile FileName="CalificacionServicio.disco" MetadataType="Disco" ID="2b49f32e-b3f6-4466-8a3b-70336628ee0e" SourceId="1" SourceUrl="http://localhost:8080/CalificacionServicio?disco" />
+    <MetadataFile FileName="CalificacionServicio2.xsd" MetadataType="Schema" ID="a66f9092-0640-4e98-b926-c8715bd9d3aa" SourceId="1" SourceUrl="http://localhost:8080/CalificacionServicio?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

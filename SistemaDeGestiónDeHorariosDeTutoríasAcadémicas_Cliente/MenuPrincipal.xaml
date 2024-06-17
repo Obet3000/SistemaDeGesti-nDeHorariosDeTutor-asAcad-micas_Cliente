@@ -1,0 +1,33 @@
+﻿<Page x:Class="SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.MenuPrincipal"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Title="Menú Principal">
+
+    <Grid>
+        <!-- Define the rows and columns -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Background="Green" Grid.Row="0">
+            <TextBlock Text="Menú Principal" FontSize="36" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+
+        <!-- Content -->
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+            <Button Name="ConsultarListaEstudiantesButton" Content="Consultar Lista de Estudiantes" Background="Blue" Foreground="White" Width="200" Height="40" Margin="10" Click="ConsultarListaEstudiantes_Click"/>
+            <Button Name="RegistrarReservacionButton" Content="Registrar Reservación" Background="Blue" Foreground="White" Width="200" Height="40" Margin="10" Click="RegistrarReservacion_Click"/>
+            <Button Name="CalificarSesionButton" Content="Calificar Sesión" Background="Blue" Foreground="White" Width="200" Height="40" Margin="10" Click="CalificarSesion_Click"/>
+            <Button Name="CancelarReservacionButton" Content="Cancelar Reservación" Background="Blue" Foreground="White" Width="200" Height="40" Margin="10" Click="CancelarReservacion_Click"/>
+            <Button Name="RegistrarSesionButton" Content="Registrar Sesión" Background="Blue" Foreground="White" Width="200" Height="40" Margin="10" Click="RegistrarSesion_Click"/>
+            <Button Name="ConsultarReportesButton" Content="Consultar Reportes" Background="Blue" Foreground="White" Width="200" Height="40" Margin="10" Click="ConsultarReportes_Click"/>
+            <Button Content="Salir" Background="Red" Foreground="White" Width="200" Height="40" Margin="10" Click="Salir_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
