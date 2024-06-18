@@ -40,7 +40,7 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
                     break;
                 case "Tutor":
                     CancelarReservacionButton.Visibility = Visibility.Visible;
-                    CancelarTodasButton.Visibility = Visibility.Visible;
+                    CancelarTodasButton.Visibility = Visibility.Collapsed;
                     break;
             }
         }

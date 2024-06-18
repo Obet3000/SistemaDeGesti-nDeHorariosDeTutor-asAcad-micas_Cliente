@@ -99,7 +99,6 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
         private void CargarDatosSesion(ReporteTutoriaDTO reporte)
         {
             TutoradosAtendidosTextBlock.Text = reporte.NumeroTutoradosAtendidos.ToString();
-            TiempoPromedioTextBlock.Text = TimeSpan.FromMinutes(reporte.TiempoPromedioTutorias).ToString(@"hh\:mm");
             AsuntosAtendidosTextBlock.Text = string.Join(", ", reporte.AsuntosTratados);
             AsuntosNoAtendidosTextBlock.Text = reporte.NumeroAsuntosNoAtendidos.ToString();
         }

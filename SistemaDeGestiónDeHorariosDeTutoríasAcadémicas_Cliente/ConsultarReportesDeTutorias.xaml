@@ -34,10 +34,6 @@
                     <TextBlock Name="TutoradosAtendidosTextBlock" Text="0" FontSize="16" HorizontalAlignment="Center"/>
                 </StackPanel>
 
-                <StackPanel Grid.Column="1" HorizontalAlignment="Center">
-                    <TextBlock Text="Tiempo promedio de tutoría" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
-                    <TextBlock Name="TiempoPromedioTextBlock" Text="0" FontSize="16" HorizontalAlignment="Center"/>
-                </StackPanel>
 
                 <StackPanel Grid.Column="2" HorizontalAlignment="Center">
                     <TextBlock Text="Asuntos atendidos" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
