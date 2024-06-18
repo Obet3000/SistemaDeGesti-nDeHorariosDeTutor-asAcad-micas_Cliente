@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.3.3:8080/ConsultaServicio" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.158.61:8080/ConsultaServicio" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ConsultaServicio3.xsd" MetadataType="Schema" ID="248af728-bdf4-43d2-b4a5-7e7fd088ea67" SourceId="1" SourceUrl="http://192.168.3.3:8080/ConsultaServicio?xsd=xsd2" />
-    <MetadataFile FileName="ConsultaServicio1.disco" MetadataType="Disco" ID="ea4e9f38-2820-44f8-8ba3-7c45b26cc231" SourceId="1" SourceUrl="http://192.168.3.3:8080/ConsultaServicio?disco" />
-    <MetadataFile FileName="ConsultaServicio31.xsd" MetadataType="Schema" ID="c897a70f-b37c-4026-ae20-a8914e403141" SourceId="1" SourceUrl="http://192.168.3.3:8080/ConsultaServicio?xsd=xsd1" />
-    <MetadataFile FileName="ConsultaServicio32.xsd" MetadataType="Schema" ID="e563bcac-590e-4d23-84fb-58a9764149bb" SourceId="1" SourceUrl="http://192.168.3.3:8080/ConsultaServicio?xsd=xsd0" />
-    <MetadataFile FileName="ConsultaServicio1.wsdl" MetadataType="Wsdl" ID="4ac1edb1-16bf-4ac5-a180-5f6f4de174ff" SourceId="1" SourceUrl="http://192.168.3.3:8080/ConsultaServicio?wsdl" />
+    <MetadataFile FileName="ConsultaServicio.xsd" MetadataType="Schema" ID="11f3f4ad-7139-4142-b64f-4aa78fae51b6" SourceId="1" SourceUrl="http://192.168.158.61:8080/ConsultaServicio?xsd=xsd2" />
+    <MetadataFile FileName="ConsultaServicio1.xsd" MetadataType="Schema" ID="989bc9c6-e824-4d10-8808-a6cbdfba275c" SourceId="1" SourceUrl="http://192.168.158.61:8080/ConsultaServicio?xsd=xsd0" />
+    <MetadataFile FileName="ConsultaServicio.wsdl" MetadataType="Wsdl" ID="d00ade5b-a00a-466a-916b-b93bc36387bd" SourceId="1" SourceUrl="http://192.168.158.61:8080/ConsultaServicio?wsdl" />
+    <MetadataFile FileName="ConsultaServicio2.xsd" MetadataType="Schema" ID="dc50b516-eba7-47e2-971e-c81ab92c042a" SourceId="1" SourceUrl="http://192.168.158.61:8080/ConsultaServicio?xsd=xsd1" />
+    <MetadataFile FileName="ConsultaServicio.disco" MetadataType="Disco" ID="f9261508-eb1d-45b5-aa8a-9e88124865ba" SourceId="1" SourceUrl="http://192.168.158.61:8080/ConsultaServicio?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
