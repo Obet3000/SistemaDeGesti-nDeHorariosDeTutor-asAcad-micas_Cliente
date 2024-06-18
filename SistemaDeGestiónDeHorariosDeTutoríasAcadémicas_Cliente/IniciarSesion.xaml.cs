@@ -7,6 +7,11 @@ using SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioAutentifica
 
 namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
 {
+    /**
+     * Página para iniciar sesión en el sistema de gestión de horarios de tutorías académicas.
+     * Modificado por: Obet Jair Hernandez Gonzalez
+     * Fecha de modificación: 18-06-2024
+     */
     public partial class IniciarSesion : Page, IAutentificacionServicioCallback
     {
         private IAutentificacionServicio _servicio;
@@ -18,6 +23,7 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
             context = new InstanceContext(this);
         }
 
+        
         public void RespuestaAutentificacion(UsuarioDTO usuario)
         {
             if (usuario.Correo != null)
@@ -51,6 +57,7 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
             }
         }
 
+        
         private void IniciarSesion_Click(object sender, RoutedEventArgs e)
         {
             string usuario = UsuarioTextBox.Text;
@@ -74,17 +81,19 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error: {ex.Message}");
+                    MessageBox.Show($"Error inesperado: {ex.Message}");
                 }
             }
         }
 
+        
         private void Registrarse_Click(object sender, RoutedEventArgs e)
         {
             var mainWindow = (MainWindow)Window.GetWindow(this);
             mainWindow.MostrarPagina(new Registro());
         }
 
+        
         private string HashContrasena(string contrasena)
         {
             using (var sha256 = System.Security.Cryptography.SHA256.Create())
@@ -99,6 +108,9 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
             }
         }
 
+        
+         // Valida los campos de usuario y contraseña.
+         
         private bool ValidarCampos(string usuario, string contrasena)
         {
             if (string.IsNullOrWhiteSpace(usuario))

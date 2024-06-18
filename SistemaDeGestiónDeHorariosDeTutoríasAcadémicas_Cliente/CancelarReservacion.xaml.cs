@@ -8,6 +8,12 @@ using System.Collections.Generic;
 
 namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
 {
+    /**
+     * Página para cancelar reservaciones de tutoría académica.
+     * Esta clase permite a los usuarios cancelar reservaciones individuales o todas sus reservaciones.
+     * Modificado por: Obet Jair Hernandez Gonzalez
+     * Fecha de modificación: 18-06-2024
+     */
     public partial class CancelarReservacion : Page, ICancelarServicioCallback
     {
         private ICancelarServicio _servicio;
@@ -22,6 +28,7 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
             CargarReservaciones();
         }
 
+        // Configura la visibilidad de los botones según el rol del usuario.
         private void ConfigurarBotones()
         {
             var usuario = UsuarioSingleton.ObtenerInstancia();
@@ -38,6 +45,7 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
             }
         }
 
+        // Carga las reservaciones del usuario actual.
         private void CargarReservaciones()
         {
             try
@@ -53,12 +61,13 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
             {
                 MessageBox.Show($"Tiempo de espera agotado: {ex.Message}");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show("Error inesperado al cargar reservaciones. Por favor, inténtelo más tarde.");
             }
         }
 
+        // Maneja el evento de clic para cancelar una reservación específica.
         private void CancelarReservacion_Click(object sender, RoutedEventArgs e)
         {
             if (HorarioComboBox.SelectedItem != null)
@@ -78,9 +87,9 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
                 {
                     MessageBox.Show($"Tiempo de espera agotado: {ex.Message}");
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show($"Error: {ex.Message}");
+                    MessageBox.Show("Error inesperado al cancelar la reservación. Por favor, inténtelo más tarde.");
                 }
             }
             else
@@ -89,6 +98,7 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
             }
         }
 
+        // Maneja el evento de clic para cancelar todas las reservaciones del usuario.
         private void CancelarTodas_Click(object sender, RoutedEventArgs e)
         {
             string motivo = AsuntoTextBox.Text;
@@ -126,43 +136,33 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
 
         public void NotificarReservacionCancelada(int idReservacion, string motivo)
         {
-            Dispatcher.Invoke(() =>
-            {
-                MessageBox.Show($"Reservación cancelada: {motivo}");
-            });
+            MessageBox.Show($"Reservación cancelada: {motivo}");
+            CargarReservaciones();
         }
 
         public void NotificarTodasReservacionesCanceladas(string nombreUsuario, string motivo)
         {
-            Dispatcher.Invoke(() =>
-            {
-                MessageBox.Show($"Todas las reservaciones para {nombreUsuario} han sido canceladas: {motivo}");
-            });
+            MessageBox.Show($"Todas las reservaciones para {nombreUsuario} han sido canceladas: {motivo}");
+            CargarReservaciones();
         }
 
         public void NotificarError(string mensaje)
         {
-            Dispatcher.Invoke(() =>
-            {
-                MessageBox.Show($"Error: {mensaje}");
-            });
+            MessageBox.Show($"Error: {mensaje}");
         }
 
         public void NotificarReservaciones(ReservacionDTO[] reservaciones)
         {
-            Dispatcher.Invoke(() =>
+            HorarioComboBox.Items.Clear();
+            foreach (var reservacion in reservaciones)
             {
-                HorarioComboBox.Items.Clear();
-                foreach (var reservacion in reservaciones)
+                var item = new ComboBoxItem
                 {
-                    var item = new ComboBoxItem
-                    {
-                        Content = reservacion.Hora.ToString(),
-                        Tag = reservacion.IdReservacion
-                    };
-                    HorarioComboBox.Items.Add(item);
-                }
-            });
+                    Content = reservacion.Hora.ToString(),
+                    Tag = reservacion.IdReservacion
+                };
+                HorarioComboBox.Items.Add(item);
+            }
         }
     }
 }

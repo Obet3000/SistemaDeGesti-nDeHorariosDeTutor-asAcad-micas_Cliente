@@ -2,12 +2,15 @@
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
-using SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioRegistro;
 using SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioSesionTutoria;
-using System.Collections.Generic;
 
 namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
 {
+    /**
+     * Página para registrar sesiones de tutoría.
+     * Modificado por: Obet Jair Hernandez Gonzalez
+     * Fecha de modificación: 18-06-2024
+     */
     public partial class RegistrarSesionTutoria : Page, ISesionTutoriaServicioCallback
     {
         private SesionTutoriaServicioClient _servicio;
@@ -44,14 +47,29 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
                 int idPeriodo = ObtenerIdPeriodoActual();
                 int numeroDeSesion = ObtenerNumeroDeSesion(idPeriodo);
 
-                var sesion = new SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioSesionTutoria.SesionDeTutoriaDTO
+                var sesion = new SesionDeTutoriaDTO
                 {
                     FechaDeSesion = fechaSeleccionada,
                     IdPeriodo = idPeriodo,
                     NumeroDeSesion = numeroDeSesion
                 };
 
-                _servicio.RegistrarSesionDeTutoria(sesion);
+                try
+                {
+                    _servicio.RegistrarSesionDeTutoria(sesion);
+                }
+                catch (CommunicationException ex)
+                {
+                    MessageBox.Show($"Error de comunicación: {ex.Message}");
+                }
+                catch (TimeoutException ex)
+                {
+                    MessageBox.Show($"Tiempo de espera agotado: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al registrar la sesión: {ex.Message}");
+                }
             }
             else
             {
@@ -59,21 +77,29 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
             }
         }
 
-        public void NotificarSesionRegistrada(ServicioSesionTutoria.SesionDeTutoriaDTO sesion)
+        public void NotificarSesionRegistrada(SesionDeTutoriaDTO sesion)
         {
-            Dispatcher.Invoke(() =>
+            try
             {
                 MessageBox.Show($"Sesión registrada exitosamente para la fecha: {sesion.FechaDeSesion.ToString("dd/MM/yyyy")}");
                 this.NavigationService.GoBack();
-            });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al procesar la confirmación de la sesión: {ex.Message}");
+            }
         }
 
         public void NotificarError(string mensaje)
         {
-            Dispatcher.Invoke(() =>
+            try
             {
                 MessageBox.Show($"Error: {mensaje}");
-            });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al mostrar el mensaje de error: {ex.Message}");
+            }
         }
 
         private void CargarSesionesDelPeriodo()
@@ -83,34 +109,46 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
                 int idPeriodo = ObtenerIdPeriodoActual();
                 _servicio.ObtenerSesionesPorPeriodo(idPeriodo);
             }
+            catch (CommunicationException ex)
+            {
+                MessageBox.Show($"Error de comunicación: {ex.Message}");
+            }
+            catch (TimeoutException ex)
+            {
+                MessageBox.Show($"Tiempo de espera agotado: {ex.Message}");
+            }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al cargar las sesiones del periodo: {ex.Message}");
             }
         }
 
-        public void NotificarSesionesPorPeriodo(ServicioSesionTutoria.SesionDeTutoriaDTO[] sesiones)
+        public void NotificarSesionesPorPeriodo(SesionDeTutoriaDTO[] sesiones)
         {
-            Dispatcher.Invoke(() =>
+            try
             {
-                // Manejar las sesiones obtenidas (por ejemplo, mostrarlas en una lista o usarlas de alguna manera)
                 foreach (var sesion in sesiones)
                 {
                     Console.WriteLine($"Sesión: {sesion.NumeroDeSesion}, Fecha: {sesion.FechaDeSesion.ToString("dd/MM/yyyy")}");
                 }
-            });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al procesar las sesiones obtenidas: {ex.Message}");
+            }
         }
 
+        
         private int ObtenerIdPeriodoActual()
         {
-            // Implementa la lógica para obtener el ID del periodo actual
-            return 1; // Ejemplo
+            return 1; 
         }
 
+    
         private int ObtenerNumeroDeSesion(int idPeriodo)
         {
-            // Implementa la lógica para obtener el número de sesión para el periodo dado
-            return 1; // Ejemplo
+            
+            return 1; 
         }
     }
 }

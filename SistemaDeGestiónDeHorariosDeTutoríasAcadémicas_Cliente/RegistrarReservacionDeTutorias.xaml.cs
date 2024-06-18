@@ -8,6 +8,11 @@ using SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente.ServicioReservacion
 
 namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
 {
+    /**
+     * Página para registrar reservaciones de tutorías académicas.
+     * Modificado por: Obet Jair Hernandez Gonzalez
+     * Fecha de modificación: 18-06-2024
+     */
     public partial class RegistrarReservacionDeTutorias : Page, IReservacionServicioCallback
     {
         private IReservacionServicio _servicio;
@@ -24,6 +29,7 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
             CargarTurnosDisponibles();
         }
 
+       
         private void CargarTurnosDisponibles()
         {
             try
@@ -31,9 +37,17 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
                 string nombreUsuario = UsuarioSingleton.ObtenerInstancia().NombreUsuario;
                 _servicio.ObtenerTurnosOcupados(nombreUsuario, UsuarioSingleton.ObtenerInstancia().IdUsuario);
             }
-            catch
+            catch (CommunicationException ex)
             {
-                MessageBox.Show("Hubo un error al intentar cargar los turnos disponibles. Por favor, inténtelo nuevamente más tarde.");
+                MessageBox.Show($"Error de comunicación: {ex.Message}");
+            }
+            catch (TimeoutException ex)
+            {
+                MessageBox.Show($"Tiempo de espera agotado: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hubo un error al intentar cargar los turnos disponibles: {ex.Message}");
             }
         }
 
@@ -41,27 +55,24 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
         {
             try
             {
-                Dispatcher.Invoke(() =>
-                {
-                    var turnosGenerados = _gestorDeTurnos.GenerarTurnos();
-                    _gestorDeTurnos.ActualizarTurnosConReservaciones(turnosGenerados, turnos);
+                var turnosGenerados = _gestorDeTurnos.GenerarTurnos();
+                _gestorDeTurnos.ActualizarTurnosConReservaciones(turnosGenerados, turnos);
 
-                    HorarioComboBox.Items.Clear();
-                    foreach (var turno in turnosGenerados)
+                HorarioComboBox.Items.Clear();
+                foreach (var turno in turnosGenerados)
+                {
+                    if (turno.Disponible)
                     {
-                        if (turno.Disponible)
+                        HorarioComboBox.Items.Add(new ComboBoxItem
                         {
-                            HorarioComboBox.Items.Add(new ComboBoxItem
-                            {
-                                Content = turno.Hora
-                            });
-                        }
+                            Content = turno.Hora
+                        });
                     }
-                });
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Hubo un error al procesar los turnos disponibles. Por favor, inténtelo nuevamente más tarde.");
+                MessageBox.Show($"Hubo un error al procesar los turnos disponibles: {ex.Message}");
             }
         }
 
@@ -73,6 +84,7 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
             }
         }
 
+      
         private void Guardar_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -80,7 +92,7 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
                 string horarioSeleccionado = (HorarioComboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
                 string asunto = AsuntoTextBox.Text;
 
-                if (!string.IsNullOrWhiteSpace(horarioSeleccionado) && !string.IsNullOrWhiteSpace(asunto))
+                if (ValidarCampos(horarioSeleccionado, asunto))
                 {
                     var reservacion = new ReservacionDTO
                     {
@@ -99,9 +111,9 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
                     MessageBox.Show("Por favor, complete todos los campos.");
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Hubo un error al guardar la reservación. Por favor, inténtelo nuevamente más tarde.");
+                MessageBox.Show($"Hubo un error al guardar la reservación: {ex.Message}");
             }
         }
 
@@ -109,34 +121,62 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
         {
             try
             {
-                Dispatcher.Invoke(() =>
-                {
-                    MessageBox.Show("Reservación guardada exitosamente.");
-                    this.NavigationService.GoBack();
-                });
+                MessageBox.Show("Reservación guardada exitosamente.");
+                this.NavigationService.GoBack();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Hubo un error al procesar la confirmación de la reservación. Por favor, inténtelo nuevamente más tarde.");
+                MessageBox.Show($"Hubo un error al procesar la confirmación de la reservación: {ex.Message}");
             }
         }
 
         public void NotificarError(string mensaje)
         {
-            Dispatcher.Invoke(() =>
+            try
             {
                 MessageBox.Show($"Error: {mensaje}");
-            });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al mostrar el mensaje de error: {ex.Message}");
+            }
         }
 
+        
         private void Regresar_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            try
+            {
+                this.NavigationService.GoBack();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al intentar regresar: {ex.Message}");
+            }
         }
 
+        
         private int GenerarNumeroDeTurno()
         {
             return new Random().Next(1, 1000);
+        }
+
+       
+        private bool ValidarCampos(string horarioSeleccionado, string asunto)
+        {
+            if (string.IsNullOrWhiteSpace(horarioSeleccionado))
+            {
+                MessageBox.Show("Por favor, seleccione un horario.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(asunto))
+            {
+                MessageBox.Show("Por favor, ingrese un asunto.");
+                return false;
+            }
+
+            return true;
         }
     }
 }

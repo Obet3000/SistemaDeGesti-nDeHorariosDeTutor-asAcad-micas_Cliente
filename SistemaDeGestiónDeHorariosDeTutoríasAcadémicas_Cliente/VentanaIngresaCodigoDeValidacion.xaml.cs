@@ -3,9 +3,12 @@ using System.Windows;
 
 namespace SistemaDeGestiónDeHorariosDeTutoríasAcadémicas_Cliente
 {
-    /// <summary>
-    /// Lógica de interacción para VentanaIngresaCodigoDeValidacion.xaml
-    /// </summary>
+    /**
+     * Ventana para ingresar el código de validación.
+     * Permite al usuario ingresar un código de validación de 6 caracteres numéricos.
+     * Modificado por: Obet Jair Hernandez Gonzalez
+     * Fecha de modificación: 18-06-2024
+     */
     public partial class VentanaIngresaCodigoDeValidacion : Window
     {
         public int CodigoValidacion { get; private set; }
