@@ -90,9 +90,9 @@
   </wsdl:binding>
   <wsdl:service name="ConsultaServicio">
     <wsdl:port name="NetTcpBinding_IConsultaServicio" binding="tns:NetTcpBinding_IConsultaServicio">
-      <soap12:address location="net.tcp://192.168.3.3:8095/ConsultaServicio" />
+      <soap12:address location="net.tcp://192.168.3.3:8090/ConsultaServicio" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.3.3:8095/ConsultaServicio</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.3.3:8090/ConsultaServicio</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

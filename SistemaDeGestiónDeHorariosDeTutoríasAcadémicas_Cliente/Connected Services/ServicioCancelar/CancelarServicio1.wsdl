@@ -107,9 +107,9 @@
   </wsdl:binding>
   <wsdl:service name="CancelarServicio">
     <wsdl:port name="NetTcpBinding_ICancelarServicio" binding="tns:NetTcpBinding_ICancelarServicio">
-      <soap12:address location="net.tcp://192.168.3.3:8098/CancelarServicio" />
+      <soap12:address location="net.tcp://192.168.3.3:8090/CancelarServicio" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.3.3:8098/CancelarServicio</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.3.3:8090/CancelarServicio</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

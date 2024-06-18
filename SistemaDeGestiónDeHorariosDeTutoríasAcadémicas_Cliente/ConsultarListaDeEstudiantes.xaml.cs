@@ -19,7 +19,7 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
     public partial class ConsultarListaDeEstudiantes : Page, IConsultaServicioCallback
     {
         private ConsultaServicioClient _servicio;
-        private DispatcherTimer timer;
+        private DispatcherTimer temporizador;
         private TimeSpan tiempoTranscurrido;
         private List<ReservacionDTO> estudiantes;
         private ReservacionDTO estudianteActual;
@@ -27,8 +27,8 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
         public ConsultarListaDeEstudiantes()
         {
             InitializeComponent();
-            var context = new InstanceContext(this);
-            _servicio = new ConsultaServicioClient(context);
+            var contexto = new InstanceContext(this);
+            _servicio = new ConsultaServicioClient(contexto);
             InicializarTemporizador();
             CargarDatos();
             ConfigurarBotones();
@@ -42,16 +42,16 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
             switch (usuario.Rol)
             {
                 case "Tutor":
-                    IniciarContadorButton.Visibility = Visibility.Visible;
-                    DetenerContadorButton.Visibility = Visibility.Visible;
+                    BotonIniciarContador.Visibility = Visibility.Visible;
+                    BotonDetenerContador.Visibility = Visibility.Visible;
                     break;
                 default:
-                    IniciarContadorButton.Visibility = Visibility.Collapsed;
-                    DetenerContadorButton.Visibility = Visibility.Collapsed;
+                    BotonIniciarContador.Visibility = Visibility.Collapsed;
+                    BotonDetenerContador.Visibility = Visibility.Collapsed;
                     break;
             }
 
-            RegresarButton.Visibility = Visibility.Visible;
+            BotonRegresar.Visibility = Visibility.Visible;
         }
 
         // Carga las reservaciones en cola del tutor.
@@ -75,8 +75,8 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
 
             if (estudiantes != null && estudiantes.Any())
             {
-                EstudiantesDataGrid.ItemsSource = estudiantes;
-                EstudiantesDataGrid.SelectedItem = estudiantes.FirstOrDefault();
+                DataGridEstudiantes.ItemsSource = estudiantes;
+                DataGridEstudiantes.SelectedItem = estudiantes.FirstOrDefault();
                 ActualizarTutoradoAtendido();
             }
             else
@@ -90,13 +90,13 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
         private void InicializarTemporizador()
         {
             tiempoTranscurrido = TimeSpan.Zero;
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += Timer_Tick;
+            temporizador = new DispatcherTimer();
+            temporizador.Interval = TimeSpan.FromSeconds(1);
+            temporizador.Tick += Temporizador_Tick;
         }
 
         // Maneja el evento Tick del temporizador para actualizar el tiempo transcurrido.
-        private void Timer_Tick(object sender, EventArgs e)
+        private void Temporizador_Tick(object sender, EventArgs e)
         {
             tiempoTranscurrido = tiempoTranscurrido.Add(TimeSpan.FromSeconds(1));
             ActualizarTiempoTranscurrido();
@@ -105,18 +105,18 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
         // Actualiza el texto del tiempo transcurrido en la interfaz de usuario.
         private void ActualizarTiempoTranscurrido()
         {
-            TiempoTranscurridoTextBlock.Text = "Tiempo transcurrido: " + tiempoTranscurrido.ToString(@"mm\:ss");
+            TextoTiempoTranscurrido.Text = "Tiempo transcurrido: " + tiempoTranscurrido.ToString(@"mm\:ss");
         }
 
-        private void Regresar_Click(object sender, RoutedEventArgs e)
+        private void BotonRegresar_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }
 
         // Maneja el evento de clic para detener el temporizador y actualizar la duración de la tutoría.
-        private void DetenerContador_Click(object sender, RoutedEventArgs e)
+        private void BotonDetenerContador_Click(object sender, RoutedEventArgs e)
         {
-            timer.Stop();
+            temporizador.Stop();
             if (estudianteActual != null)
             {
                 estudianteActual.TutoriaAcademica.Duracion = tiempoTranscurrido;
@@ -132,13 +132,13 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
         }
 
         // Maneja el evento de clic para iniciar el temporizador para la tutoría seleccionada.
-        private void IniciarContador_Click(object sender, RoutedEventArgs e)
+        private void BotonIniciarContador_Click(object sender, RoutedEventArgs e)
         {
-            if (EstudiantesDataGrid.SelectedItem != null)
+            if (DataGridEstudiantes.SelectedItem != null)
             {
-                estudianteActual = (ReservacionDTO)EstudiantesDataGrid.SelectedItem;
+                estudianteActual = (ReservacionDTO)DataGridEstudiantes.SelectedItem;
                 tiempoTranscurrido = TimeSpan.Zero;
-                timer.Start();
+                temporizador.Start();
                 MessageBox.Show($"Iniciando contador para {estudianteActual.Tutorado.UsuarioTutorado.Nombre}");
             }
             else
@@ -150,10 +150,10 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
         // Actualiza el texto del tutorado atendido en la interfaz de usuario.
         private void ActualizarTutoradoAtendido()
         {
-            if (EstudiantesDataGrid.SelectedItem != null)
+            if (DataGridEstudiantes.SelectedItem != null)
             {
-                estudianteActual = (ReservacionDTO)EstudiantesDataGrid.SelectedItem;
-                TutoradoAtendidoTextBlock.Text = "Tutorado atendido: " + estudianteActual.Tutorado.UsuarioTutorado.Nombre;
+                estudianteActual = (ReservacionDTO)DataGridEstudiantes.SelectedItem;
+                TextoTutoradoAtendido.Text = "Tutorado atendido: " + estudianteActual.Tutorado.UsuarioTutorado.Nombre;
             }
         }
 
@@ -167,7 +167,7 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
             MessageBox.Show($"Error: {mensaje}");
         }
 
-        private void EstudiantesDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DataGridEstudiantes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ActualizarTutoradoAtendido();
         }

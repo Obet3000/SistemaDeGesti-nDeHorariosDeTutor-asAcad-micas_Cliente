@@ -71,9 +71,9 @@
   </wsdl:binding>
   <wsdl:service name="ServicioRegistro">
     <wsdl:port name="NetTcpBinding_IServicioRegistro" binding="tns:NetTcpBinding_IServicioRegistro">
-      <soap12:address location="net.tcp://192.168.3.3:8092/RegistroServicio" />
+      <soap12:address location="net.tcp://192.168.3.3:8090/RegistroServicio" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.3.3:8092/RegistroServicio</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.3.3:8090/RegistroServicio</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>
