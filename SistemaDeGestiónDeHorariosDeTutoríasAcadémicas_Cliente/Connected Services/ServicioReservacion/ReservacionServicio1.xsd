@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dominio" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dominio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://192.168.3.3:8080/AutentificacionServicio?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://192.168.158.61:8080/ReservacionServicio?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ReservacionDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Asunto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoAsunto" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EstadoReservacion" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Hora" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="IdReservacion" type="xs:int" />
+      <xs:element minOccurs="0" name="IdTutoriaAcademica" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumeroDeTurno" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Tutorado" nillable="true" type="tns:TutoradoDTO" />
+      <xs:element minOccurs="0" name="TutoriaAcademica" nillable="true" type="tns:TutoriaAcademicaDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReservacionDTO" nillable="true" type="tns:ReservacionDTO" />
+  <xs:complexType name="TutoradoDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdTutor" type="xs:int" />
+      <xs:element minOccurs="0" name="IdTutorado" type="xs:int" />
+      <xs:element minOccurs="0" name="UsuarioTutor" nillable="true" type="tns:UsuarioDTO" />
+      <xs:element minOccurs="0" name="UsuarioTutorado" nillable="true" type="tns:UsuarioDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TutoradoDTO" nillable="true" type="tns:TutoradoDTO" />
   <xs:complexType name="UsuarioDTO">
     <xs:sequence>
       <xs:element minOccurs="0" name="ApellidoMaterno" nillable="true" type="xs:string" />
@@ -23,15 +46,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfTutoradoDTO" nillable="true" type="tns:ArrayOfTutoradoDTO" />
-  <xs:complexType name="TutoradoDTO">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="IdTutor" type="xs:int" />
-      <xs:element minOccurs="0" name="IdTutorado" type="xs:int" />
-      <xs:element minOccurs="0" name="UsuarioTutor" nillable="true" type="tns:UsuarioDTO" />
-      <xs:element minOccurs="0" name="UsuarioTutorado" nillable="true" type="tns:UsuarioDTO" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TutoradoDTO" nillable="true" type="tns:TutoradoDTO" />
   <xs:complexType name="ArrayOfTutoriaAcademicaDTO">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="TutoriaAcademicaDTO" nillable="true" type="tns:TutoriaAcademicaDTO" />
@@ -59,20 +73,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfReservacionDTO" nillable="true" type="tns:ArrayOfReservacionDTO" />
-  <xs:complexType name="ReservacionDTO">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Asunto" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EstadoAsunto" nillable="true" type="xs:boolean" />
-      <xs:element minOccurs="0" name="EstadoReservacion" nillable="true" type="xs:boolean" />
-      <xs:element minOccurs="0" name="Hora" nillable="true" type="ser:duration" />
-      <xs:element minOccurs="0" name="IdReservacion" type="xs:int" />
-      <xs:element minOccurs="0" name="IdTutoriaAcademica" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="NumeroDeTurno" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="Tutorado" nillable="true" type="tns:TutoradoDTO" />
-      <xs:element minOccurs="0" name="TutoriaAcademica" nillable="true" type="tns:TutoriaAcademicaDTO" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ReservacionDTO" nillable="true" type="tns:ReservacionDTO" />
   <xs:complexType name="SesionDeTutoriaDTO">
     <xs:sequence>
       <xs:element minOccurs="0" name="FechaDeSesion" type="xs:dateTime" />
@@ -82,10 +82,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SesionDeTutoriaDTO" nillable="true" type="tns:SesionDeTutoriaDTO" />
-  <xs:complexType name="ArrayOfUsuarioDTO">
+  <xs:complexType name="ArrayOfTurnoDTO">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsuarioDTO" nillable="true" type="tns:UsuarioDTO" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TurnoDTO" nillable="true" type="tns:TurnoDTO" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfUsuarioDTO" nillable="true" type="tns:ArrayOfUsuarioDTO" />
+  <xs:element name="ArrayOfTurnoDTO" nillable="true" type="tns:ArrayOfTurnoDTO" />
+  <xs:complexType name="TurnoDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Disponible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Hora" nillable="true" type="ser:duration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TurnoDTO" nillable="true" type="tns:TurnoDTO" />
 </xs:schema>

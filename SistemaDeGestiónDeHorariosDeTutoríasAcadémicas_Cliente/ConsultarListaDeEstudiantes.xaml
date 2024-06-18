@@ -19,7 +19,7 @@
         </Border>
 
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,60,0,0">
-            <DataGrid Name="EstudiantesDataGrid" AutoGenerateColumns="False" Width="700" Height="200" CanUserAddRows="False" IsReadOnly="True" SelectionChanged="EstudiantesDataGrid_SelectionChanged">
+            <DataGrid Name="DataGridEstudiantes" AutoGenerateColumns="False" Width="700" Height="200" CanUserAddRows="False" IsReadOnly="True" SelectionChanged="DataGridEstudiantes_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Hora" Binding="{Binding Hora}" Width="*" />
                     <DataGridTextColumn Header="Ubicación" Binding="{Binding TutoriaAcademica.Ubicacion}" Width="*" />
@@ -31,14 +31,14 @@
                     <DataGridTextColumn Header="Duración" Binding="{Binding TutoriaAcademica.Duracion}" Width="*" />
                 </DataGrid.Columns>
             </DataGrid>
-            <TextBlock Name="TutoradoAtendidoTextBlock" Text="Tutorado atendido: Pedro Peredo Domínguez" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
-            <TextBlock Name="TiempoTranscurridoTextBlock" Text="Tiempo transcurrido: 00:00" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+            <TextBlock Name="TextoTutoradoAtendido" Text="Tutorado atendido: Pedro Peredo Domínguez" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+            <TextBlock Name="TextoTiempoTranscurrido" Text="Tiempo transcurrido: 00:00" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
         </StackPanel>
 
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,20,0,20">
-            <Button Name="RegresarButton" Content="Regresar" Background="Red" Foreground="White" Width="120" Height="40" Margin="10" Click="Regresar_Click"/>
-            <Button Name="IniciarContadorButton" Content="Iniciar contador" Background="Blue" Foreground="White" Width="120" Height="40" Margin="10" Click="IniciarContador_Click"/>
-            <Button Name="DetenerContadorButton" Content="Detener contador" Background="Green" Foreground="White" Width="120" Height="40" Margin="10" Click="DetenerContador_Click"/>
-</StackPanel>
+            <Button Name="BotonRegresar" Content="Regresar" Background="Red" Foreground="White" Width="120" Height="40" Margin="10" Click="BotonRegresar_Click"/>
+            <Button Name="BotonIniciarContador" Content="Iniciar contador" Background="Blue" Foreground="White" Width="120" Height="40" Margin="10" Click="BotonIniciarContador_Click"/>
+            <Button Name="BotonDetenerContador" Content="Detener contador" Background="Green" Foreground="White" Width="120" Height="40" Margin="10" Click="BotonDetenerContador_Click"/>
+        </StackPanel>
     </Grid>
 </Page>

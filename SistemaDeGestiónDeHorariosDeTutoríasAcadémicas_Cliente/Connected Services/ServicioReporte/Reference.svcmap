@@ -19,15 +19,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.3.3:8080/ReporteServicio" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.158.61:8080/ReporteServicio" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ReporteServicio1.disco" MetadataType="Disco" ID="2d5ca7b1-d626-4c5f-af39-dcc0b03c82f6" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReporteServicio?disco" />
-    <MetadataFile FileName="ReporteServicio4.xsd" MetadataType="Schema" ID="6edd15ab-3888-4e73-a1ff-640ccdf1651c" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReporteServicio?xsd=xsd0" />
-    <MetadataFile FileName="ReporteServicio41.xsd" MetadataType="Schema" ID="042216d2-2b48-498a-9688-886db707f129" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReporteServicio?xsd=xsd1" />
-    <MetadataFile FileName="ReporteServicio1.wsdl" MetadataType="Wsdl" ID="ed395ccd-d0c9-425f-9c85-03da3eebf4ef" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReporteServicio?wsdl" />
-    <MetadataFile FileName="ReporteServicio42.xsd" MetadataType="Schema" ID="f0c5784d-a290-4f6a-a2c4-347b0e5577f8" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReporteServicio?xsd=xsd3" />
-    <MetadataFile FileName="ReporteServicio43.xsd" MetadataType="Schema" ID="fc485534-af40-4428-8db9-18d453ec6f0f" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReporteServicio?xsd=xsd2" />
+    <MetadataFile FileName="ReporteServicio.xsd" MetadataType="Schema" ID="d4e7d7fc-7806-4730-ae40-9aee5d00cebb" SourceId="1" SourceUrl="http://192.168.158.61:8080/ReporteServicio?xsd=xsd3" />
+    <MetadataFile FileName="ReporteServicio.wsdl" MetadataType="Wsdl" ID="47608552-2afb-4786-a837-5199f19d6a1a" SourceId="1" SourceUrl="http://192.168.158.61:8080/ReporteServicio?wsdl" />
+    <MetadataFile FileName="ReporteServicio.disco" MetadataType="Disco" ID="0850f640-fc97-4ed1-a66d-197d614cff59" SourceId="1" SourceUrl="http://192.168.158.61:8080/ReporteServicio?disco" />
+    <MetadataFile FileName="ReporteServicio1.xsd" MetadataType="Schema" ID="737cbc1e-e313-45d2-acf8-e09a310577f0" SourceId="1" SourceUrl="http://192.168.158.61:8080/ReporteServicio?xsd=xsd0" />
+    <MetadataFile FileName="ReporteServicio2.xsd" MetadataType="Schema" ID="e46c0958-7851-445d-9b23-b3bfeeaef871" SourceId="1" SourceUrl="http://192.168.158.61:8080/ReporteServicio?xsd=xsd1" />
+    <MetadataFile FileName="ReporteServicio3.xsd" MetadataType="Schema" ID="a166d892-c9f1-441c-98e3-10f23cdcd506" SourceId="1" SourceUrl="http://192.168.158.61:8080/ReporteServicio?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

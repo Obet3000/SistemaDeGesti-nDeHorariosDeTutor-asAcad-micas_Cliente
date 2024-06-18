@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.3.3:8080/SesionTutoriaServicio?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.158.61:8080/SesionTutoriaServicio?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SesionTutoriaServicio3.xsd" MetadataType="Schema" ID="fbfec273-a23f-4b35-86d6-3fdcfab95cb8" SourceId="1" SourceUrl="http://192.168.3.3:8080/SesionTutoriaServicio?xsd=xsd1" />
-    <MetadataFile FileName="SesionTutoriaServicio31.xsd" MetadataType="Schema" ID="21c26eb4-1e95-4b45-ae76-c01b545f40d6" SourceId="1" SourceUrl="http://192.168.3.3:8080/SesionTutoriaServicio?xsd=xsd0" />
-    <MetadataFile FileName="SesionTutoriaServicio1.wsdl" MetadataType="Wsdl" ID="927ef710-f143-4a24-8171-a43530624380" SourceId="1" SourceUrl="http://192.168.3.3:8080/SesionTutoriaServicio?wsdl" />
-    <MetadataFile FileName="SesionTutoriaServicio32.xsd" MetadataType="Schema" ID="a2218c52-cf8f-41c0-9ef5-5c9bcbdf5161" SourceId="1" SourceUrl="http://192.168.3.3:8080/SesionTutoriaServicio?xsd=xsd2" />
+    <MetadataFile FileName="SesionTutoriaServicio.xsd" MetadataType="Schema" ID="cbb87b4c-95a4-4ef7-90b2-04da77b6ed29" SourceId="1" SourceUrl="http://192.168.158.61:8080/SesionTutoriaServicio?xsd=xsd2" />
+    <MetadataFile FileName="SesionTutoriaServicio1.xsd" MetadataType="Schema" ID="bdb93c68-66c0-4606-8ae2-92299d6aba48" SourceId="1" SourceUrl="http://192.168.158.61:8080/SesionTutoriaServicio?xsd=xsd1" />
+    <MetadataFile FileName="SesionTutoriaServicio2.xsd" MetadataType="Schema" ID="4652c4af-f943-44ef-8d71-6bd65166e503" SourceId="1" SourceUrl="http://192.168.158.61:8080/SesionTutoriaServicio?xsd=xsd0" />
+    <MetadataFile FileName="SesionTutoriaServicio.wsdl" MetadataType="Wsdl" ID="e3a20fb2-6b88-4985-a491-2c745c9c094d" SourceId="1" SourceUrl="http://192.168.158.61:8080/SesionTutoriaServicio?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

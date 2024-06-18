@@ -6,16 +6,21 @@ using System;
 
 namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
 {
+    /**
+     * Esta clase gestiona la carga de tutores y la asignación de un tutor seleccionado al estudiante.
+     * Modificado por: Obet Jair Hernandez Gonzalez
+     * Fecha de modificación: 18-06-2024
+     */
     public partial class SeleccionarTutor : Page, IAutentificacionServicioCallback
     {
         private IAutentificacionServicio _servicio;
-        private InstanceContext context;
+        private InstanceContext _context;
 
         public SeleccionarTutor()
         {
             InitializeComponent();
-            context = new InstanceContext(this);
-            _servicio = new AutentificacionServicioClient(context);
+            _context = new InstanceContext(this);
+            _servicio = new AutentificacionServicioClient(_context);
             CargarTutores();
         }
 
@@ -55,6 +60,8 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
             });
         }
 
+
+         
         private void Guardar_Click(object sender, RoutedEventArgs e)
         {
             if (TutorComboBox.SelectedItem != null)
@@ -94,6 +101,8 @@ namespace SistemaDeGestionDeHorariosDeTutoriasAcademicas_Cliente
             }
         }
 
+         // Notifica al usuario sobre la actualización del tutor y redirige al menú principal si es exitosa.
+         
         public void NotificarActualizacionUsuario(bool exito, string mensaje)
         {
             Dispatcher.Invoke(() =>

@@ -10,9 +10,9 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://192.168.3.3:8080/CalificacionServicio?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://192.168.3.3:8080/CalificacionServicio?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://192.168.3.3:8080/CalificacionServicio?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Dominio" />
+      <xsd:import schemaLocation="http://192.168.158.61:8080/CalificacionServicio?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.158.61:8080/CalificacionServicio?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.158.61:8080/CalificacionServicio?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Dominio" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ICalificacionServicio_CalificarTutoria_InputMessage">
@@ -83,9 +83,9 @@
   </wsdl:binding>
   <wsdl:service name="CalificacionServicio">
     <wsdl:port name="NetTcpBinding_ICalificacionServicio" binding="tns:NetTcpBinding_ICalificacionServicio">
-      <soap12:address location="net.tcp://192.168.3.3:8096/CalificacionServicio" />
+      <soap12:address location="net.tcp://192.168.158.61:8090/CalificacionServicio" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.3.3:8096/CalificacionServicio</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.158.61:8090/CalificacionServicio</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

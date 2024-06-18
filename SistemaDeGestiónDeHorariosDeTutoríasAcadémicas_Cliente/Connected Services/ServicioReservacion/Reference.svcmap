@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.3.3:8080/ReservacionServicio" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.158.61:8080/ReservacionServicio" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ReservacionServicio3.xsd" MetadataType="Schema" ID="10ebf045-4f87-40a7-860f-4e59f63c341a" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReservacionServicio?xsd=xsd1" />
-    <MetadataFile FileName="ReservacionServicio1.disco" MetadataType="Disco" ID="19897488-401a-43c9-9bb4-3483030692fc" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReservacionServicio?disco" />
-    <MetadataFile FileName="ReservacionServicio31.xsd" MetadataType="Schema" ID="e4981139-2e75-4111-817d-9df63b9f98c5" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReservacionServicio?xsd=xsd2" />
-    <MetadataFile FileName="ReservacionServicio1.wsdl" MetadataType="Wsdl" ID="bae93461-73e5-4355-b3a0-35d5b9c95d88" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReservacionServicio?wsdl" />
-    <MetadataFile FileName="ReservacionServicio32.xsd" MetadataType="Schema" ID="d13a9cdb-23a3-450a-9167-cff0325ace42" SourceId="1" SourceUrl="http://192.168.3.3:8080/ReservacionServicio?xsd=xsd0" />
+    <MetadataFile FileName="ReservacionServicio.xsd" MetadataType="Schema" ID="cde4e05c-7dc3-4929-8583-598dd65a0c16" SourceId="1" SourceUrl="http://192.168.158.61:8080/ReservacionServicio?xsd=xsd1" />
+    <MetadataFile FileName="ReservacionServicio1.xsd" MetadataType="Schema" ID="9c2c7d02-1c6c-4a06-9511-fcc2bf5d2605" SourceId="1" SourceUrl="http://192.168.158.61:8080/ReservacionServicio?xsd=xsd2" />
+    <MetadataFile FileName="ReservacionServicio2.xsd" MetadataType="Schema" ID="e7fe7e3a-af35-4fe3-8a5b-cbcd009aa630" SourceId="1" SourceUrl="http://192.168.158.61:8080/ReservacionServicio?xsd=xsd0" />
+    <MetadataFile FileName="ReservacionServicio.disco" MetadataType="Disco" ID="065241b3-5a63-44dd-bcc0-8a3d46348f93" SourceId="1" SourceUrl="http://192.168.158.61:8080/ReservacionServicio?disco" />
+    <MetadataFile FileName="ReservacionServicio.wsdl" MetadataType="Wsdl" ID="f41c5940-ae3d-4d18-b556-a8fcd31421fd" SourceId="1" SourceUrl="http://192.168.158.61:8080/ReservacionServicio?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

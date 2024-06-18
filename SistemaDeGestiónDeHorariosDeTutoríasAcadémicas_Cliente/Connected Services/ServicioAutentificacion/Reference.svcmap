@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.3.3:8080/AutentificacionServicio?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.158.61:8080/AutentificacionServicio?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="AutentificacionServicio.xsd" MetadataType="Schema" ID="8df3c272-138b-4121-a895-8db8ea086b01" SourceId="1" SourceUrl="http://192.168.3.3:8080/AutentificacionServicio?xsd=xsd0" />
-    <MetadataFile FileName="AutentificacionServicio1.wsdl" MetadataType="Wsdl" ID="8bb9149b-3828-451e-bfff-c7dcf6c2b99c" SourceId="1" SourceUrl="http://192.168.3.3:8080/AutentificacionServicio?wsdl" />
-    <MetadataFile FileName="AutentificacionServicio1.xsd" MetadataType="Schema" ID="681a8c08-1094-4291-b999-f682a4ec4467" SourceId="1" SourceUrl="http://192.168.3.3:8080/AutentificacionServicio?xsd=xsd1" />
-    <MetadataFile FileName="AutentificacionServicio2.xsd" MetadataType="Schema" ID="c96dad65-3037-47d6-8d24-0d7e40d8d232" SourceId="1" SourceUrl="http://192.168.3.3:8080/AutentificacionServicio?xsd=xsd2" />
+    <MetadataFile FileName="AutentificacionServicio3.xsd" MetadataType="Schema" ID="a5d44d48-474f-4d62-aac6-5f9ff3b65ef5" SourceId="1" SourceUrl="http://192.168.158.61:8080/AutentificacionServicio?xsd=xsd2" />
+    <MetadataFile FileName="AutentificacionServicio31.xsd" MetadataType="Schema" ID="a4d70853-a992-4c3a-b06c-815dfdcb1222" SourceId="1" SourceUrl="http://192.168.158.61:8080/AutentificacionServicio?xsd=xsd0" />
+    <MetadataFile FileName="AutentificacionServicio32.xsd" MetadataType="Schema" ID="953ef08e-5ad9-45fb-8142-e6c6c64fce48" SourceId="1" SourceUrl="http://192.168.158.61:8080/AutentificacionServicio?xsd=xsd1" />
+    <MetadataFile FileName="AutentificacionServicio.wsdl" MetadataType="Wsdl" ID="9504c24e-d9d1-441a-85c1-05f9ef03b655" SourceId="1" SourceUrl="http://192.168.158.61:8080/AutentificacionServicio?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

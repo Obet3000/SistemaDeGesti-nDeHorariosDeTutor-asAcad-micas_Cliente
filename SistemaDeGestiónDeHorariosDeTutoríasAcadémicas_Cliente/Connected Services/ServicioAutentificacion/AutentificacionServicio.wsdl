@@ -10,9 +10,9 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://192.168.3.3:8080/AutentificacionServicio?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://192.168.3.3:8080/AutentificacionServicio?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://192.168.3.3:8080/AutentificacionServicio?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Dominio" />
+      <xsd:import schemaLocation="http://192.168.158.61:8080/AutentificacionServicio?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.158.61:8080/AutentificacionServicio?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.158.61:8080/AutentificacionServicio?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Dominio" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IAutentificacionServicio_AutentificacionUsuario_InputMessage">
@@ -102,9 +102,9 @@
   </wsdl:binding>
   <wsdl:service name="AutentificacionServicio">
     <wsdl:port name="NetTcpBinding_IAutentificacionServicio" binding="tns:NetTcpBinding_IAutentificacionServicio">
-      <soap12:address location="net.tcp://192.168.3.3:8091/AutentificacionServicio" />
+      <soap12:address location="net.tcp://192.168.158.61:8090/AutentificacionServicio" />
       <wsa10:EndpointReference>
-        <wsa10:Address>net.tcp://192.168.3.3:8091/AutentificacionServicio</wsa10:Address>
+        <wsa10:Address>net.tcp://192.168.158.61:8090/AutentificacionServicio</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

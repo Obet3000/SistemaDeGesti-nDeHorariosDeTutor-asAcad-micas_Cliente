@@ -206,87 +206,87 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ServicioAutentificacion\AutentificacionServicio.xsd">
+    <None Include="Connected Services\ServicioAutentificacion\AutentificacionServicio.wsdl" />
+    <None Include="Connected Services\ServicioAutentificacion\AutentificacionServicio3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioAutentificacion\AutentificacionServicio1.wsdl" />
-    <None Include="Connected Services\ServicioAutentificacion\AutentificacionServicio1.xsd">
+    <None Include="Connected Services\ServicioAutentificacion\AutentificacionServicio31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioAutentificacion\AutentificacionServicio2.xsd">
+    <None Include="Connected Services\ServicioAutentificacion\AutentificacionServicio32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioCalificacion\CalificacionServicio1.wsdl" />
-    <None Include="Connected Services\ServicioCalificacion\CalificacionServicio3.xsd">
+    <None Include="Connected Services\ServicioCalificacion\CalificacionServicio.wsdl" />
+    <None Include="Connected Services\ServicioCalificacion\CalificacionServicio.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioCalificacion\CalificacionServicio31.xsd">
+    <None Include="Connected Services\ServicioCalificacion\CalificacionServicio1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioCalificacion\CalificacionServicio32.xsd">
+    <None Include="Connected Services\ServicioCalificacion\CalificacionServicio2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioCancelar\CancelarServicio1.wsdl" />
-    <None Include="Connected Services\ServicioCancelar\CancelarServicio3.xsd">
+    <None Include="Connected Services\ServicioCancelar\CancelarServicio.wsdl" />
+    <None Include="Connected Services\ServicioCancelar\CancelarServicio.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioCancelar\CancelarServicio31.xsd">
+    <None Include="Connected Services\ServicioCancelar\CancelarServicio1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioCancelar\CancelarServicio32.xsd">
+    <None Include="Connected Services\ServicioCancelar\CancelarServicio2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioConsulta\ConsultaServicio1.wsdl" />
-    <None Include="Connected Services\ServicioConsulta\ConsultaServicio3.xsd">
+    <None Include="Connected Services\ServicioConsulta\ConsultaServicio.wsdl" />
+    <None Include="Connected Services\ServicioConsulta\ConsultaServicio.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioConsulta\ConsultaServicio31.xsd">
+    <None Include="Connected Services\ServicioConsulta\ConsultaServicio1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioConsulta\ConsultaServicio32.xsd">
+    <None Include="Connected Services\ServicioConsulta\ConsultaServicio2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioRegistro\RegistroServicio.xsd">
+    <None Include="Connected Services\ServicioRegistro\RegistroServicio3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioRegistro\RegistroServicio1.xsd">
+    <None Include="Connected Services\ServicioRegistro\RegistroServicio31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioRegistro\RegistroServicio2.xsd">
+    <None Include="Connected Services\ServicioRegistro\RegistroServicio32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioRegistro\ServicioRegistro1.wsdl" />
-    <None Include="Connected Services\ServicioReporte\ReporteServicio1.wsdl" />
-    <None Include="Connected Services\ServicioReporte\ReporteServicio4.xsd">
+    <None Include="Connected Services\ServicioRegistro\ServicioRegistro.wsdl" />
+    <None Include="Connected Services\ServicioReporte\ReporteServicio.wsdl" />
+    <None Include="Connected Services\ServicioReporte\ReporteServicio.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioReporte\ReporteServicio41.xsd">
+    <None Include="Connected Services\ServicioReporte\ReporteServicio1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioReporte\ReporteServicio42.xsd">
+    <None Include="Connected Services\ServicioReporte\ReporteServicio2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioReporte\ReporteServicio43.xsd">
+    <None Include="Connected Services\ServicioReporte\ReporteServicio3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioReservacion\ReservacionServicio1.wsdl" />
-    <None Include="Connected Services\ServicioReservacion\ReservacionServicio3.xsd">
+    <None Include="Connected Services\ServicioReservacion\ReservacionServicio.wsdl" />
+    <None Include="Connected Services\ServicioReservacion\ReservacionServicio.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioReservacion\ReservacionServicio31.xsd">
+    <None Include="Connected Services\ServicioReservacion\ReservacionServicio1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioReservacion\ReservacionServicio32.xsd">
+    <None Include="Connected Services\ServicioReservacion\ReservacionServicio2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioSesionTutoria\SesionTutoriaServicio1.wsdl" />
-    <None Include="Connected Services\ServicioSesionTutoria\SesionTutoriaServicio3.xsd">
+    <None Include="Connected Services\ServicioSesionTutoria\SesionTutoriaServicio.wsdl" />
+    <None Include="Connected Services\ServicioSesionTutoria\SesionTutoriaServicio.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioSesionTutoria\SesionTutoriaServicio31.xsd">
+    <None Include="Connected Services\ServicioSesionTutoria\SesionTutoriaServicio1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServicioSesionTutoria\SesionTutoriaServicio32.xsd">
+    <None Include="Connected Services\ServicioSesionTutoria\SesionTutoriaServicio2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -417,19 +417,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServicioCalificacion\CalificacionServicio1.disco" />
+    <None Include="Connected Services\ServicioCalificacion\CalificacionServicio.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServicioCancelar\CancelarServicio1.disco" />
+    <None Include="Connected Services\ServicioCancelar\CancelarServicio.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServicioConsulta\ConsultaServicio1.disco" />
+    <None Include="Connected Services\ServicioConsulta\ConsultaServicio.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServicioReporte\ReporteServicio1.disco" />
+    <None Include="Connected Services\ServicioReporte\ReporteServicio.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServicioReservacion\ReservacionServicio1.disco" />
+    <None Include="Connected Services\ServicioReservacion\ReservacionServicio.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
